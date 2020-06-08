@@ -1,11 +1,11 @@
 # Deep-Learning-for-Computer-Vision
 
-## Course Overview
+## Overview
 In this course, students will learn the basics of applying Deep Learning to Computer Vision tasks, such as image classification and recognition. In more detail, students will first learn basic Machine Learning foundations, then learn how Neural Networks work. Students will then expand their knowledge to Convolutional Neural Networks, more advanced architectures, and recent applications to Computer Vision.
 
 Assignments will be in Python, using libraries such as Numpy and PyTorch. Numpy and Pytorch will be taught in course. Students will also implement recent Deep Learning papers in Computer Vision, which undergraduate students will perform in teams, and graduate students individually. Graduate students will also be required to present the papers in class. A list of potential papers will be given.
 
-## Course Objectives And Learning Outcomes
+## Objectives And Learning Outcomes
 Through this course students will:
 
 - learn the basics of applying Machine Learning to Computer Vision,
