@@ -1,0 +1,49 @@
+@InProceedings{text2scene2019, 
+    author = {Tan, Fuwen and Feng, Song and Ordonez, Vicente},
+    title = {Text2Scene: Generating Compositional Scenes from Textual Descriptions},
+    booktitle = {IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month = {June},
+    year = {2019}}
+
+
+--Revised by Parm Johal
+
+
+#ENVIRONMENT INITIALIZATION & PACKAGE INSTALLS
+conda create -n syn python=3.6          # Create a virtual environment
+source activate syn         		# Activate virtual environment
+conda install jupyter scikit-image cython opencv seaborn nltk pycairo   # Install dependencies
+git clone https://github.com/cocodataset/cocoapi.git 			# Install pycocotools
+cd cocoapi/PythonAPI
+python setup.py build_ext install
+python -m nltk.downloader all
+
+conda install pytorch
+conda install -c pytorch torchVision
+conda install -c pytorch torchText
+conda install -c power sentencepiece
+conda install -c conda-forge python-annoy
+conda install pillow=6.1
+
+#CLONE REPOSITORY
+git clone https://github.com/uvavision/Text2Scene.git
+cd Text2Scene/lib
+make
+cd ..
+
+#DOWNLOAD DATA
+./experiments/scripts/fetch_data.sh
+
+#DEMO (ABSTRACT MODEL)
+./experiments/scripts/fetch_models.sh
+
+
+./experiments/scripts/sample_abstract.sh	# Abstract Scene demo
+./experiments/scripts/sample_layout.sh	# Layout demo
+
+#TRAINING (ABSTRACT MODEL)
+./experiments/scripts/train_abstract.sh
+
+#REPLACE FILES/FOLDERS
+Take the WordFeatures folder from /Text2Scene/data/ and place it into AbstractScenes_v1.1
+
